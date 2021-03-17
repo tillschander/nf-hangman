@@ -21,6 +21,11 @@ while ($turns > 0) {
 
     if ($guessedCorrect) {
         echo "Yeah, correct letter!\n";
+
+        if (!in_array('_', $guesses)) {
+            $won = true;
+            $turns = 0;
+        }
     } else {
         echo "Sorry, wrong letter!\n";
         $turns--;
